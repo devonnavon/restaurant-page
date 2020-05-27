@@ -1,0 +1,34 @@
+
+#content{
+    display: grid;
+    width: 75%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "nav nav nav"
+                         "main main header"
+                         "main main description"
+                         "main main description"
+                         "footer footer footer";
+    margin: auto;
+}
+
+#main-image {
+    grid-area: main;
+
+}
+
+#main-image img {
+    width: 100%;
+
+}
+
+#main-description{
+    grid-area: description;
+    padding-left: 15px;
+    align-items: start;
+}
+
+#header {
+    grid-area: header;
+    padding-left: 15px;
+    align-self: end;
+}

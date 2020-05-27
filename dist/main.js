@@ -90,10 +90,23 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _loadPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./loadPage */ \"./src/loadPage.js\");\n\n\nObject(_loadPage__WEBPACK_IMPORTED_MODULE_0__[\"loadPage\"])()\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/loadPage.js":
+/*!*************************!*\
+  !*** ./src/loadPage.js ***!
+  \*************************/
+/*! exports provided: loadPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"loadPage\", function() { return loadPage; });\n//loadPage.js\nconst loadPage = () => {\n    const content = document.getElementById('content');\n    const mainImage = createElement('main-image');\n    const header = createElement('header');\n    const mainDescription = createElement('main-description');\n    \n    addImage(mainImage,'img/koi.jpg', 'koi');\n    addHeading(header, 'The Pond')\n    addParagraph(mainDescription, 'We have some koi in our restaurant. Don\\'t spell it coy or they\\'ll get offended')\n\n    content.appendChild(mainImage);\n    content.appendChild(header);\n    content.appendChild(mainDescription);\n}\n\nconst createElement = (id) => {\n    const elem = document.createElement('div');\n    elem.id = id;\n    return elem;\n}\n\nconst addImage = (parent, src, alt = '') => {\n    const img = document.createElement('img');\n    img.setAttribute('src', src);\n    img.setAttribute('alt', alt);\n    parent.appendChild(img);\n}\n\nconst addParagraph = (parent, text) => {\n    const p = document.createElement('p');\n    p.innerHTML = text;\n    parent.appendChild(p)\n}\n\nconst addHeading = (parent, text) => {\n    const heading = document.createElement('h2');\n    heading.innerHTML = text;\n    parent.appendChild(heading)\n}\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/loadPage.js?");
 
 /***/ })
 
