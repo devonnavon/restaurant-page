@@ -3,16 +3,25 @@ body {
     background: gray;
 }
 
-#content{
+p {
+    color: pink;
+}
+
+h2 {
+    color: maroon;
+}
+
+#home {
     display: grid;
     width: 75%;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "nav nav nav"
+    grid-template-areas: 
                          "main main header"
                          "main main description"
                          "main main description"
                          "footer footer footer";
     margin: auto;
+    padding: 10px 0px;
 }
 
 #main-image {
