@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/createElements.js":
+/*!*******************************!*\
+  !*** ./src/createElements.js ***!
+  \*******************************/
+/*! exports provided: createElement, addHeading, addImage, addParagraph */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createElement\", function() { return createElement; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"addHeading\", function() { return addHeading; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"addImage\", function() { return addImage; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"addParagraph\", function() { return addParagraph; });\nconst createElement = (id) => {\n    const elem = document.createElement('div');\n    elem.id = id;\n    return elem;\n}\n\nconst addImage = (parent, src, alt = '') => {\n    const img = document.createElement('img');\n    img.setAttribute('src', src);\n    img.setAttribute('alt', alt);\n    parent.appendChild(img);\n}\n\nconst addParagraph = (parent, text) => {\n    const p = document.createElement('p');\n    p.innerHTML = text;\n    parent.appendChild(p)\n}\n\nconst addHeading = (parent, text) => {\n    const heading = document.createElement('h2');\n    heading.innerHTML = text;\n    parent.appendChild(heading)\n}\n\n\n\n//# sourceURL=webpack:///./src/createElements.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -94,7 +106,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _loadPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./loadPage */ \"./src/loadPage.js\");\n\n\nObject(_loadPage__WEBPACK_IMPORTED_MODULE_0__[\"loadPage\"])()\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _loadPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./loadPage */ \"./src/loadPage.js\");\n\n\nObject(_loadPage__WEBPACK_IMPORTED_MODULE_0__[\"loadPage\"])('home')\n\nconst homeNav = document.getElementById('home-nav')\nconst locationNav = document.getElementById('location-nav')\nconst menuNav = document.getElementById('menu-nav')\n\nhomeNav.addEventListener('click', e=>{\n    e.preventDefault()\n    Object(_loadPage__WEBPACK_IMPORTED_MODULE_0__[\"loadPage\"])('home');\n})\n\nlocationNav.addEventListener('click', e=>{\n    e.preventDefault()\n    Object(_loadPage__WEBPACK_IMPORTED_MODULE_0__[\"loadPage\"])('location');\n})\n\nmenuNav.addEventListener('click', e=>{\n    e.preventDefault()\n    Object(_loadPage__WEBPACK_IMPORTED_MODULE_0__[\"loadPage\"])('menu');\n})\n\n\n// locationNav.addEventListener('click', loadPage('location'))\n// menuNav.addEventListener('click', loadPage('menu'))\n\n// const homeClickEvent = (e, option) => {\n//     e.preventDefault()\n//     loadPage\n// }\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -106,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _loa
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"loadPage\", function() { return loadPage; });\n//loadPage.js\nconst loadPage = () => {\n    const content = document.getElementById('content');\n\n\n\n\n\n    const mainImage = createElement('main-image');\n    const header = createElement('header');\n    const mainDescription = createElement('main-description');\n    \n    addImage(mainImage,'img/koi.jpg', 'koi');\n    addHeading(header, 'The Pond')\n    addParagraph(mainDescription, 'We have some koi in our restaurant. Don\\'t spell it coy or they\\'ll get offended')\n\n    content.appendChild(mainImage);\n    content.appendChild(header);\n    content.appendChild(mainDescription);\n}\n\nconst createElement = (id) => {\n    const elem = document.createElement('div');\n    elem.id = id;\n    return elem;\n}\n\nconst addImage = (parent, src, alt = '') => {\n    const img = document.createElement('img');\n    img.setAttribute('src', src);\n    img.setAttribute('alt', alt);\n    parent.appendChild(img);\n}\n\nconst addParagraph = (parent, text) => {\n    const p = document.createElement('p');\n    p.innerHTML = text;\n    parent.appendChild(p)\n}\n\nconst addHeading = (parent, text) => {\n    const heading = document.createElement('h2');\n    heading.innerHTML = text;\n    parent.appendChild(heading)\n}\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/loadPage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"loadPage\", function() { return loadPage; });\n/* harmony import */ var _createElements__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createElements */ \"./src/createElements.js\");\n//loadPage.js\n\n\n\n\nconst content = document.getElementById('content');\n\nconst loadPage = (option) => {\n    clearContent()\n    if(option === 'home') loadHome();\n\n}\n\nconst clearContent = () => {\n    while (content.firstChild){\n        content.removeChild(content.lastChild);\n    }\n    \n}\n\n\nconst loadHome = () => {\n    const home = Object(_createElements__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])('home');\n    \n    const mainImage = Object(_createElements__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])('main-image');\n    const header = Object(_createElements__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])('header');\n    const mainDescription = Object(_createElements__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])('main-description');\n    \n    Object(_createElements__WEBPACK_IMPORTED_MODULE_0__[\"addImage\"])(mainImage,'img/koi.jpg', 'koi');\n    Object(_createElements__WEBPACK_IMPORTED_MODULE_0__[\"addHeading\"])(header, 'The Pond')\n    Object(_createElements__WEBPACK_IMPORTED_MODULE_0__[\"addParagraph\"])(mainDescription, 'We have some koi in our restaurant. Don\\'t spell it coy or they\\'ll get offended')\n\n    home.appendChild(mainImage);\n    home.appendChild(header);\n    home.appendChild(mainDescription);\n    content.appendChild(home)\n}\n\n\n\n\n\n//# sourceURL=webpack:///./src/loadPage.js?");
 
 /***/ })
 
